@@ -52,13 +52,10 @@ def download():
     try:
         urllib.request.urlretrieve(url, dest, 
             reporthook=lambda block, size, total: 
-                print(f"
-[+] Progress: {(block*size/total)*100:.1f}%", end="") if total > 0 else None)
-        print(f"
-[!] Download complete: {dest}")
+                print(f"\r[+] Progress: {(block*size/total)*100:.1f}%", end="") if total > 0 else None)
+        print(f"\n[!] Download complete: {dest}")
     except Exception as e:
-        print(f"
-[!] Download failed: {e}")
+        print(f"\n[!] Download failed: {e}")
 
 if __name__ == "__main__":
     download()

@@ -5,25 +5,19 @@ from pathlib import Path
 
 # Mapping of known files to their descriptions
 FILE_DESCRIPTIONS = {
-    "complex_test.rs": "Comprehensive Rust feature testing script",
     "governor.rs": "System resource/governor controller",
     "news.rs": "Rust-based news headline fetcher",
     "app_manager.py": "Application management utility",
-    "build_suckless.py": "Suckless software build orchestrator",
     "control.py": "System control and automation script",
     "rsb.py": "Rust build/staging utility",
     "rust_linker.py": "Rust toolchain linking utility",
     "strip_comments.py": "Code comment removal tool",
-    "rag.py": "Retrieval-Augmented Generation utility",
-    "deploy_env.py": "Main environment deployment script",
-    "dotmanager.py": "Standalone dotfile manager",
     "requirements.txt": "Python dependencies for the workspace",
     "generate_docs.sh": "Documentation generation script",
     "make_artifact.sh": "Artifact creation/bundling script",
     "scripts_env.sh": "Environment configuration for scripts",
     "clang_tidy_check.sh": "Rust/C++ linting utility",
     "build_python.sh": "Python build helper",
-    "get_latest_rwkv.py": "RWKV model fetcher",
     "virtual_env_fish.fish": "Fish shell virtualenv manager",
     "tool.py": "Python CLI tool template",
 }

@@ -1,0 +1,4 @@
+/data/data/com.termux/files/usr/lib
+├── @mmmbuto/gemini-cli-termux@0.28.2-termux
+└── npm@11.10.0
+

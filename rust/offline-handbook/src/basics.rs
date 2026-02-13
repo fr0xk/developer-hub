@@ -1,6 +1,5 @@
 /// Rust Basics Reference
 /// Ownership, Borrowing, and Pattern Matching.
-
 pub fn ownership_demo() {
     let s1 = String::from("hello");
     let s2 = s1; // s1 moved
@@ -11,7 +10,7 @@ pub fn ownership_demo() {
     println!("Length of '{}' is {}", s3, len);
 }
 
-fn calculate_length(s: &String) -> usize {
+fn calculate_length(s: &str) -> usize {
     s.len()
 }
 
@@ -28,6 +27,16 @@ pub fn pattern_matching() {
         ToolState::Idle => println!("Idle"),
         ToolState::Running(pid) => println!("Running PID: {}", pid),
         ToolState::Error(ref e) => eprintln!("Err: {}", e),
+    }
+
+    let state_idle = ToolState::Idle;
+    if let ToolState::Idle = state_idle {
+        println!("Tool is currently idle.");
+    }
+
+    let state_error = ToolState::Error("Failed to initialize".to_string());
+    if let ToolState::Error(msg) = state_error {
+        eprintln!("Encountered an error state: {}", msg);
     }
 
     // if let syntax

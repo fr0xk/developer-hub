@@ -33,7 +33,7 @@ pub fn command_execution() {
 pub fn libc_usage() {
     // Basic libc usage for "suckless" / low level needs
     unsafe {
-        let pid = libc::getpid();
+        let _pid = libc::getpid();
         // println!("PID via libc: {}", pid);
     }
 }

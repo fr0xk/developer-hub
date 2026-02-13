@@ -23,8 +23,7 @@ def main_menu():
         print("7. [System] Get Device Info")
         print("q. Exit")
         
-        choice = input("
-> ")
+        choice = input("> ")
         
         if choice == '1':
             status = run("termux-torch")
@@ -33,27 +32,24 @@ def main_menu():
         
         elif choice == '2':
             data = json.loads(run("termux-battery-status"))
-            print(f"
-Level: {data['percentage']}% | Status: {data['status']} | Temp: {data['temperature']}°C")
-            input("
-Press Enter...")
+            print(f"""
+Level: {data['percentage']}% | Status: {data['status']} | Temp: {data['temperature']}°C""")
+            input("Press Enter...")
             
         elif choice == '3':
             val = input("Brightness (0-255): ")
             run(f"termux-brightness {val}")
             
         elif choice == '4':
-            print("
-" + run("cmd package list packages -3 | cut -d: -f2"))
-            input("
-Press Enter...")
+            print("""
+""" + run("cmd package list packages -3 | cut -d: -f2"))
+            input("Press Enter...")
             
         elif choice == '5':
             pkg = input("Enter package name: ")
             run(f"cmd activity force-stop {pkg}")
             print(f"Killed {pkg}")
-            input("
-Press Enter...")
+            input("Press Enter...")
             
         elif choice == '6':
             print("[*] Purging user-space caches...")
@@ -61,16 +57,14 @@ Press Enter...")
             
             run("cmd activity trim-memory com.termux HIDDEN") 
             print("[+] RAM pressure reduced.")
-            input("
-Press Enter...")
+            input("Press Enter...")
             
         elif choice == '7':
-            print(f"
-Model: {run('getprop ro.product.model')}")
+            print(f"""
+Model: {run('getprop ro.product.model')}""")
             print(f"Android: {run('getprop ro.build.version.release')}")
             print(f"Uptime: {run('uptime -p')}")
-            input("
-Press Enter...")
+            input("Press Enter...")
             
         elif choice == 'q':
             break

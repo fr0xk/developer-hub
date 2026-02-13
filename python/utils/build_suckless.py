@@ -33,9 +33,9 @@ def build():
     
     cmd = f"rustc {flags} {links} -L {TARGET_DIR} {SRC} -o {OUT}"
     
-    print(f"[*] Executing manual build:
+    print(f"""[*] Executing manual build:
 {cmd}
-")
+""")
     try:
         subprocess.run(cmd, shell=True, check=True)
         print("[+] Build Successful!")

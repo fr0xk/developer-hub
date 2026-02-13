@@ -4,7 +4,7 @@ AI-related modules and utilities.
 
 ## Contents
 
-- `rag.py`: Retrieval-Augmented Generation utility.
+
 
 ## Usage
 

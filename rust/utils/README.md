@@ -4,7 +4,6 @@ Core Rust utilities for system management and testing.
 
 ## Contents
 
-- `complex_test.rs`: Comprehensive Rust feature testing script.
 - `governor.rs`: System resource/governor controller.
 - `news.rs`: Rust-based news headline fetcher.
 

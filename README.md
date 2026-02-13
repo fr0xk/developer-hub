@@ -4,8 +4,10 @@ A smart, consolidated monorepo for developer tools, handbook resources, and auto
 
 ## Directory Structure
 - `src/rust/`: Core Rust projects and standalone utilities.
-- `src/python/`: Automation, AI modules, and examples.
-- `scripts/`: Maintenance and documentation tools.
+- `src/python/`: Automation, AI modules, and general utilities.
+- `src/templates/`: Boilerplate templates for Python and Rust.
+- `scripts/`: Shell scripts, maintenance, and documentation tools.
+- `assets/`: Project resources and data files.
 - `docs/`: Automatically generated system documentation.
 
 ## Maintenance

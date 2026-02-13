@@ -1,1 +1,0 @@
-alias rag='python3 ~/dot-scripts/rag.py'

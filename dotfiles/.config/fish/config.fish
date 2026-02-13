@@ -12,14 +12,17 @@ set -g fish_history_save_unmodified 500
 
 set -gx PATH "$HOME/.local/bin" "$HOME/.cargo/bin" "$HOME/go/bin" $PATH
 
-function smol
-    if type -q llama-cli
-        llama-cli -m storage/shared/Models/SmolLM3-Q4_K_M.gguf -t 2 -c 1024 --mlock --no-mmap --temp 0 --reasoning-budget 0 -st $argv
-    end
-end
-
 function fish_prompt
     set_color yellow
     echo -n "λ "(pwd | sed "s|$HOME|~|")" : "
     set_color normal
+end
+
+# Start agent if not running and add key if not loaded
+if not set -q SSH_AUTH_SOCK
+    eval (ssh-agent -c) >/dev/null
+end
+
+if not ssh-add -l >/dev/null 2>&1
+    ssh-add ~/.ssh/id_ed25519 2>/dev/null
 end

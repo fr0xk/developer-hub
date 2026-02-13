@@ -1,9 +1,0 @@
-# This file contains fish universal variable definitions.
-# VERSION: 3.0
-SETUVAR --export CFLAGS:\x2dfsanitize\x3daddress\x20\x2dfsanitize\x3dundefined\x20\x2dWall\x20\x2dWextra\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2dWerror
-SETUVAR --export CXXFLAGS:\x2dfsanitize\x3daddress\x20\x2dfsanitize\x3dundefined\x20\x2dWall\x20\x2dWextra\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2dWerror
-SETUVAR __fish_initialized:4300
-SETUVAR fish_color_command:268bd2
-SETUVAR fish_color_normal:657b83
-SETUVAR fish_color_param:839496
-SETUVAR fish_features:no\x2dkeyboard\x2dprotocols

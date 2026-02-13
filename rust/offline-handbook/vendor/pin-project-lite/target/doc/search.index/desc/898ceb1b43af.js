@@ -1,0 +1,1 @@
+rd_("CkA macro that creates a projection type covering all the \xe2\x80\xa6CeA lightweight version of pin-project written with \xe2\x80\xa6")

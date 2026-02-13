@@ -1,0 +1,1 @@
+rd_("AoReturns the argument unchanged.BaCalls <code>U::from(self)</code>.AkAn ID of registered action.CcRegisters an arbitrary action for the given signal.AjList of forbidden signals.BfRemoves a previously installed action.AiRegister a signal action.CkRegister a signal action without checking for forbidden \xe2\x80\xa6BaBackend of the signal-hook crate.1")

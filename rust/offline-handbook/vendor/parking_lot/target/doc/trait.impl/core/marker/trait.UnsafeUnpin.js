@@ -1,0 +1,9 @@
+(function() {
+    var implementors = Object.fromEntries([["parking_lot",[["impl UnsafeUnpin for <a class=\"enum\" href=\"parking_lot/enum.OnceState.html\" title=\"enum parking_lot::OnceState\">OnceState</a>",1,["parking_lot::once::OnceState"]],["impl UnsafeUnpin for <a class=\"struct\" href=\"parking_lot/struct.Condvar.html\" title=\"struct parking_lot::Condvar\">Condvar</a>",1,["parking_lot::condvar::Condvar"]],["impl UnsafeUnpin for <a class=\"struct\" href=\"parking_lot/struct.Once.html\" title=\"struct parking_lot::Once\">Once</a>",1,["parking_lot::once::Once"]],["impl UnsafeUnpin for <a class=\"struct\" href=\"parking_lot/struct.RawFairMutex.html\" title=\"struct parking_lot::RawFairMutex\">RawFairMutex</a>",1,["parking_lot::raw_fair_mutex::RawFairMutex"]],["impl UnsafeUnpin for <a class=\"struct\" href=\"parking_lot/struct.RawMutex.html\" title=\"struct parking_lot::RawMutex\">RawMutex</a>",1,["parking_lot::raw_mutex::RawMutex"]],["impl UnsafeUnpin for <a class=\"struct\" href=\"parking_lot/struct.RawRwLock.html\" title=\"struct parking_lot::RawRwLock\">RawRwLock</a>",1,["parking_lot::raw_rwlock::RawRwLock"]],["impl UnsafeUnpin for <a class=\"struct\" href=\"parking_lot/struct.RawThreadId.html\" title=\"struct parking_lot::RawThreadId\">RawThreadId</a>",1,["parking_lot::remutex::RawThreadId"]],["impl UnsafeUnpin for <a class=\"struct\" href=\"parking_lot/struct.WaitTimeoutResult.html\" title=\"struct parking_lot::WaitTimeoutResult\">WaitTimeoutResult</a>",1,["parking_lot::condvar::WaitTimeoutResult"]]]]]);
+    if (window.register_implementors) {
+        window.register_implementors(implementors);
+    } else {
+        window.pending_implementors = implementors;
+    }
+})()
+//{"start":57,"fragment_lengths":[1477]}

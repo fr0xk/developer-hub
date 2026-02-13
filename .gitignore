@@ -1,6 +1,35 @@
-target/
-__pycache__/
-*.pyc
+# --- Secrets & Personal Configs ---
+# Never commit GitHub/CLI credentials
+**/hosts.yml
+**/config.yml
+**/.env*
+**/credentials
+**/.ssh/
+**/secring.gpg
+
+# --- Editor Junk ---
+# Helix / Vim / Emacs backup files
+*.swp
+*.swo
+*~
+.hx-history
+.helix/
+
+# --- System & OS Clutter ---
+# MacOS noise
 .DS_Store
-docs/rust/
-docs/python/
+.AppleDouble
+.LSOverride
+
+# Linux / Thumbnails
+.thumbnails/
+.cache/
+.dbus/
+
+# --- Language Specific Junk ---
+# Keep your dotfiles repo small
+node_modules/
+__pycache__/
+*.o
+*.out
+bin/

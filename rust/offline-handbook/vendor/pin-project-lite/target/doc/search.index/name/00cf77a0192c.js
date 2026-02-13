@@ -1,0 +1,1 @@
+rd_("kpin_projectA`pin_project_lite")

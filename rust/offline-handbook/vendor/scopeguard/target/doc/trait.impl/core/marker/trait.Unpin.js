@@ -1,0 +1,9 @@
+(function() {
+    var implementors = Object.fromEntries([["scopeguard",[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/marker/trait.Unpin.html\" title=\"trait core::marker::Unpin\">Unpin</a> for <a class=\"enum\" href=\"scopeguard/enum.Always.html\" title=\"enum scopeguard::Always\">Always</a>",1,["scopeguard::Always"]],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/marker/trait.Unpin.html\" title=\"trait core::marker::Unpin\">Unpin</a> for <a class=\"enum\" href=\"scopeguard/enum.OnSuccess.html\" title=\"enum scopeguard::OnSuccess\">OnSuccess</a>",1,["scopeguard::OnSuccess"]],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/marker/trait.Unpin.html\" title=\"trait core::marker::Unpin\">Unpin</a> for <a class=\"enum\" href=\"scopeguard/enum.OnUnwind.html\" title=\"enum scopeguard::OnUnwind\">OnUnwind</a>",1,["scopeguard::OnUnwind"]],["impl&lt;T, F, S&gt; <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/marker/trait.Unpin.html\" title=\"trait core::marker::Unpin\">Unpin</a> for <a class=\"struct\" href=\"scopeguard/struct.ScopeGuard.html\" title=\"struct scopeguard::ScopeGuard\">ScopeGuard</a>&lt;T, F, S&gt;<div class=\"where\">where\n    T: <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/marker/trait.Unpin.html\" title=\"trait core::marker::Unpin\">Unpin</a>,\n    F: <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/marker/trait.Unpin.html\" title=\"trait core::marker::Unpin\">Unpin</a>,</div>",1,["scopeguard::ScopeGuard"]]]]]);
+    if (window.register_implementors) {
+        window.register_implementors(implementors);
+    } else {
+        window.pending_implementors = implementors;
+    }
+})()
+//{"start":57,"fragment_lengths":[1506]}

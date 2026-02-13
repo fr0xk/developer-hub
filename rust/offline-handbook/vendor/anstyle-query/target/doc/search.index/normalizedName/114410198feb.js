@@ -1,0 +1,1 @@
+rd_("dbooldiscifoptiongwindows0hclicolorgnocoloritruecolorlanstylequerymclicolorforceA`enableansicolorsAatermsupportscolorAetermsupportsansicolor")

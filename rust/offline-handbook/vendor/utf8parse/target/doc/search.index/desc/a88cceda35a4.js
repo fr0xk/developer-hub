@@ -1,0 +1,1 @@
+rd_("AcCreate a new ParserAoReturns the argument unchanged.BaCalls <code>U::from(self)</code>.AlA parser for Utf8 CharactersAbAdvance the parserCjHandles codepoint and invalid sequence events from the \xe2\x80\xa6CbCalled whenever a codepoint is parsed successfullyAkA table-driven UTF-8 ParserBkCalled when an invalid_sequence is detected")

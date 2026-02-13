@@ -1,0 +1,1 @@
+rd_("AfLow-level ANSI-stylingCfExtend <code>std::io::Write</code> with wincon stylingB`Write colored text to the streamBeWrite ANSI colored text to the streamB`Styling legacy Windows terminals")

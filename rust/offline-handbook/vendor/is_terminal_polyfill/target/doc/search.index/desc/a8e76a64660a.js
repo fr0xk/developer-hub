@@ -1,0 +1,1 @@
+rd_("CiTrait to determine if a descriptor/handle refers to a \xe2\x80\xa6DbReturns <code>true</code> if the descriptor/handle refers to a \xe2\x80\xa6DkPolyfill for <code>is_terminal</code> stdlib feature for use with older \xe2\x80\xa6")

@@ -1,0 +1,1 @@
+rd_("dclapmstdio_fixture")

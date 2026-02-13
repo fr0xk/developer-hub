@@ -1,0 +1,1 @@
+rd_("BgDefines an external function to import.AcLinking for Windows")

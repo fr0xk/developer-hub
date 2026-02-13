@@ -1,0 +1,2 @@
+createSrcSidebar('[["heck",["",[],["kebab.rs","lib.rs","lower_camel.rs","shouty_kebab.rs","shouty_snake.rs","snake.rs","title.rs","train.rs","upper_camel.rs"]]]]');
+//{"start":19,"fragment_lengths":[141]}

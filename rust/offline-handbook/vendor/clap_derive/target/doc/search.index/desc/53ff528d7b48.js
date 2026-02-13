@@ -1,0 +1,1 @@
+rd_("BeGenerates the <code>Args</code> impl.CaGenerates the <code>Parser</code> implementation.BjGenerates the <code>ValueEnum</code> impl.BkGenerates the <code>Subcommand</code> impl.Ah<code>clap_derive</code>")

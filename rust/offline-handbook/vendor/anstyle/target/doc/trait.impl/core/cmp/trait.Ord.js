@@ -1,0 +1,9 @@
+(function() {
+    var implementors = Object.fromEntries([["anstyle",[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/cmp/trait.Ord.html\" title=\"trait core::cmp::Ord\">Ord</a> for <a class=\"enum\" href=\"anstyle/enum.AnsiColor.html\" title=\"enum anstyle::AnsiColor\">AnsiColor</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/cmp/trait.Ord.html\" title=\"trait core::cmp::Ord\">Ord</a> for <a class=\"enum\" href=\"anstyle/enum.Color.html\" title=\"enum anstyle::Color\">Color</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/cmp/trait.Ord.html\" title=\"trait core::cmp::Ord\">Ord</a> for <a class=\"struct\" href=\"anstyle/struct.Ansi256Color.html\" title=\"struct anstyle::Ansi256Color\">Ansi256Color</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/cmp/trait.Ord.html\" title=\"trait core::cmp::Ord\">Ord</a> for <a class=\"struct\" href=\"anstyle/struct.Effects.html\" title=\"struct anstyle::Effects\">Effects</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/cmp/trait.Ord.html\" title=\"trait core::cmp::Ord\">Ord</a> for <a class=\"struct\" href=\"anstyle/struct.Reset.html\" title=\"struct anstyle::Reset\">Reset</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/cmp/trait.Ord.html\" title=\"trait core::cmp::Ord\">Ord</a> for <a class=\"struct\" href=\"anstyle/struct.RgbColor.html\" title=\"struct anstyle::RgbColor\">RgbColor</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/cmp/trait.Ord.html\" title=\"trait core::cmp::Ord\">Ord</a> for <a class=\"struct\" href=\"anstyle/struct.Style.html\" title=\"struct anstyle::Style\">Style</a>"]]]]);
+    if (window.register_implementors) {
+        window.register_implementors(implementors);
+    } else {
+        window.pending_implementors = implementors;
+    }
+})()
+//{"start":57,"fragment_lengths":[1687]}

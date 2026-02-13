@@ -1,0 +1,9 @@
+(function() {
+    var implementors = Object.fromEntries([["parking_lot_core",[["impl UnsafeUnpin for <a class=\"enum\" href=\"parking_lot_core/enum.FilterOp.html\" title=\"enum parking_lot_core::FilterOp\">FilterOp</a>",1,["parking_lot_core::parking_lot::FilterOp"]],["impl UnsafeUnpin for <a class=\"enum\" href=\"parking_lot_core/enum.ParkResult.html\" title=\"enum parking_lot_core::ParkResult\">ParkResult</a>",1,["parking_lot_core::parking_lot::ParkResult"]],["impl UnsafeUnpin for <a class=\"enum\" href=\"parking_lot_core/enum.RequeueOp.html\" title=\"enum parking_lot_core::RequeueOp\">RequeueOp</a>",1,["parking_lot_core::parking_lot::RequeueOp"]],["impl UnsafeUnpin for <a class=\"struct\" href=\"parking_lot_core/struct.ParkToken.html\" title=\"struct parking_lot_core::ParkToken\">ParkToken</a>",1,["parking_lot_core::parking_lot::ParkToken"]],["impl UnsafeUnpin for <a class=\"struct\" href=\"parking_lot_core/struct.SpinWait.html\" title=\"struct parking_lot_core::SpinWait\">SpinWait</a>",1,["parking_lot_core::spinwait::SpinWait"]],["impl UnsafeUnpin for <a class=\"struct\" href=\"parking_lot_core/struct.UnparkResult.html\" title=\"struct parking_lot_core::UnparkResult\">UnparkResult</a>",1,["parking_lot_core::parking_lot::UnparkResult"]],["impl UnsafeUnpin for <a class=\"struct\" href=\"parking_lot_core/struct.UnparkToken.html\" title=\"struct parking_lot_core::UnparkToken\">UnparkToken</a>",1,["parking_lot_core::parking_lot::UnparkToken"]]]]]);
+    if (window.register_implementors) {
+        window.register_implementors(implementors);
+    } else {
+        window.pending_implementors = implementors;
+    }
+})()
+//{"start":57,"fragment_lengths":[1410]}

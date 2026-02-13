@@ -1,0 +1,1 @@
+rd_("C`This crate provides Serde\xe2\x80\x99s two derive macros.")

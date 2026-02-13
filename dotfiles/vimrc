@@ -1,0 +1,6 @@
+set background=light
+colorscheme PaperColor
+set number
+set relativenumber
+syntax on
+set termguicolors

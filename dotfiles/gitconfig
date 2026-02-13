@@ -1,0 +1,7 @@
+[user]
+	email = nikolaibitinit@gmail.com
+	name = Sudarshan Kakoty
+[pull]
+	rebase = true
+[credential]
+	helper = cache --timeout=3600

@@ -14,7 +14,7 @@ class Deployer:
     def __init__(self, args):
         self.args = args
         self.home = Path.home()
-        self.repo_dir = self.home / "personalDotfiles"
+        self.repo_dir = self.home / "developer-hub"
         self.ai_dir = self.home / "ai_workspace"
         self.is_termux = "com.termux" in os.environ.get("PREFIX", "")
 
@@ -44,11 +44,11 @@ class Deployer:
     def setup_dotfiles(self):
         print("--- Setting up Dotfiles ---")
         if not self.repo_dir.exists():
-            repo_url = self.args.repo or "git@github.com:fr0xk/personalDotfiles.git"
+            repo_url = self.args.repo or "git@github.com:fr0xk/developer-hub.git"
             self.run(["git", "clone", repo_url, str(self.repo_dir)])
         
         
-        dotmanager = self.repo_dir / "deploy_env" / "dotmanager.py"
+        dotmanager = self.repo_dir / "python" / "automation" / "deploy_env" / "dotmanager.py"
         if dotmanager.exists():
             self.run([sys.executable, str(dotmanager), "install"])
         

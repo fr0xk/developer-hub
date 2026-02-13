@@ -18,43 +18,19 @@ from pathlib import Path
 
 
 DOTFILES = {
-    ".bashrc": None,
-    ".zshrc": None,
-    ".vimrc": None,
-    ".tmux.conf": "_tmux.conf",  
-    ".gitconfig": None,
-    ".termux": None,  
-    ".config/fish": None,
-    ".config/htop": None,
-    ".config/mpv": None,
-    ".config/nvim": None,
-    ".config/alacritty": None,
-    ".config/starship.toml": None,
+    ".bashrc": "bashrc",
+    ".zshrc": "zshrc",
+    ".vimrc": "vimrc",
+    ".tmux.conf": "tmux.conf",  
+    ".gitconfig": "gitconfig",
+    ".termux": "termux",  
+    ".config/fish": "config/fish",
+    ".config/htop": "config/htop",
+    ".config/mpv": "config/mpv",
+    ".config/nvim": "config/nvim",
+    ".config/alacritty": "config/alacritty",
+    ".config/starship.toml": "config/starship.toml",
 }
-
-
-PKG_DIR = "packages"
-PKG_COMMANDS = {
-    "termux": ("pkg list-installed", "termux_pkg.txt"),
-    "pip": ("pip freeze", "pip_requirements.txt"),
-    "npm": ("npm list -g --depth=0", "npm_globals.txt"),
-    
-}
-
-
-IGNORE_PATTERNS = [
-    "__pycache__",
-    ".git",
-    ".DS_Store",
-    "*.log",
-    "*.tmp",
-    "id_rsa",
-    "id_ed25519",
-    "known_hosts",  
-    "history",
-    ".history",
-]
-
 
 
 
@@ -64,14 +40,14 @@ def get_home():
 
 
 def get_repo_root():
-    """Returns the directory containing this script's parent (python/..)."""
-    return Path(__file__).parent.parent.resolve()
+    """Returns the repository root (four levels up from this script)."""
+    return Path(__file__).resolve().parent.parent.parent.parent
 
 
-def is_ignored(path):
+def is_ignored(path, ignore_patterns):
     """Check if file matches ignore patterns."""
     name = path.name
-    for pattern in IGNORE_PATTERNS:
+    for pattern in ignore_patterns:
         if "*" in pattern:
             if name.endswith(pattern.replace("*", "")):
                 return True
@@ -80,13 +56,13 @@ def is_ignored(path):
     return False
 
 
-def copy_recursive(src, dst):
+def copy_recursive(src, dst, ignore_patterns):
     """Suckless recursive copy with ignore list."""
     if not src.exists():
         return False
 
     if src.is_file():
-        if is_ignored(src):
+        if is_ignored(src, ignore_patterns):
             return False
         
         
@@ -102,26 +78,25 @@ def copy_recursive(src, dst):
         copied_any = False
         dst.mkdir(parents=True, exist_ok=True)
         for item in src.iterdir():
-            if is_ignored(item):
+            if is_ignored(item, ignore_patterns):
                 continue
             dest_item = dst / item.name
-            if copy_recursive(item, dest_item):
+            if copy_recursive(item, dest_item, ignore_patterns):
                 copied_any = True
         return copied_any
 
     return False
 
 
-def backup_packages(repo):
+def backup_packages(repo, pkg_dir, pkg_commands):
     """Backup installed package lists."""
     print("📦 Backing up package lists...")
-    pkg_dir = repo / PKG_DIR
     pkg_dir.mkdir(exist_ok=True)
 
     
     is_termux = "com.termux" in os.environ.get("PREFIX", "")
 
-    for key, (cmd, filename) in PKG_COMMANDS.items():
+    for key, (cmd, filename) in pkg_commands.items():
         
         if key == "termux" and not is_termux:
             continue
@@ -144,7 +119,7 @@ def backup_packages(repo):
             print(f"   ⚠️ Failed to list {key}: {e}")
 
 
-def backup(home, repo):
+def backup(home, repo, pkg_dir, pkg_commands, ignore_patterns):
     """Backup: Home System -> Git Repo"""
     print(f"🔄 Backing up from {home} to {repo}...")
 
@@ -158,19 +133,19 @@ def backup(home, repo):
         dst = repo / repo_rel
 
         if src.exists():
-            if copy_recursive(src, dst):
+            if copy_recursive(src, dst, ignore_patterns):
                 count += 1
         else:
             
             pass
 
     
-    backup_packages(repo)
+    backup_packages(repo, pkg_dir, pkg_commands)
 
     print(f"✅ Backup complete. {count} dotfiles processed.")
 
 
-def install(home, repo, dry_run=False):
+def install(home, repo, pkg_dir, pkg_commands, ignore_patterns, dry_run=False):
     """Install: Git Repo -> Home System"""
     print(f"🚀 Installing from {repo} to {home}...")
     if dry_run:
@@ -195,7 +170,7 @@ def install(home, repo, dry_run=False):
         
         
 
-        if copy_recursive(src, dst):
+        if copy_recursive(src, dst, ignore_patterns):
             count += 1
             
             if platform.system() != "Windows":
@@ -210,17 +185,44 @@ def main():
     parser.add_argument(
         "action", choices=["backup", "install"], help="Action to perform"
     )
-    parser.add_argument("--dry-run", action="store_true", help="Simulate install")
+    parser.add_argument("--dry-run", action="true", help="Simulate install")
+    parser.add_argument(
+        "--dotfiles-repo-path",
+        type=str,
+        default="dotfiles",
+        help="Path relative to repo root where dotfiles are stored (default: dotfiles)",
+    )
 
     args = parser.parse_args()
 
     home = get_home()
-    repo = get_repo_root()
+    repo_root = get_repo_root()
+    repo = repo_root / args.dotfiles_repo_path
 
+    PKG_DIR = repo / "packages"
+    PKG_COMMANDS = {
+        "termux": ("pkg list-installed", "termux_pkg.txt"),
+        "pip": ("pip freeze", "pip_requirements.txt"),
+        "npm": ("npm list -g --depth=0", "npm_globals.txt"),
+    }
+
+    IGNORE_PATTERNS = [
+        "__pycache__",
+        ".git",
+        ".DS_Store",
+        "*.log",
+        "*.tmp",
+        "id_rsa",
+        "id_ed25519",
+        "known_hosts",
+        "history",
+        ".history",
+    ]
+    
     if args.action == "backup":
-        backup(home, repo)
+        backup(home, repo, PKG_DIR, PKG_COMMANDS, IGNORE_PATTERNS)
     elif args.action == "install":
-        install(home, repo, dry_run=args.dry_run)
+        install(home, repo, PKG_DIR, PKG_COMMANDS, IGNORE_PATTERNS, dry_run=args.dry_run)
 
 
 if __name__ == "__main__":

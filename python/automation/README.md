@@ -4,7 +4,6 @@ This repository is a categorized component of my personal dotfiles system.
 
 ## Contents
 
-- **deploy_env**: Environment deployment scripts
-
+- `deploy_env`: Directory.
 ---
-*Generated automatically by Dotfiles Manager*
+*Generated automatically by Developer Hub Doc-Manager*

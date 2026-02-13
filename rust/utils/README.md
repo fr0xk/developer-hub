@@ -1,26 +1,24 @@
-# Dot Scripts
+# Rust Utils
 
-This repository is a categorized component of my personal dotfiles system.
+Core Rust utilities for system management and testing.
 
 ## Contents
 
-- **app_manager.py**: Application management utility
-- **build_suckless.py**: Suckless software build orchestrator
-- **complex_test.rs**: Comprehensive Rust feature testing script
-- **control.py**: System control and automation script
-- **fp_android_arm64**: Fingerprint/Architecture specific settings
-- **governor.rs**: System resource/governor controller
-- **make_artifact.sh**: Artifact creation/bundling script
-- **news.rs**: Rust-based news headline fetcher
-- **rag.py**: Retrieval-Augmented Generation utility
-- **resources.json**: System resource mapping data
-- **rsb.py**: Rust build/staging utility
-- **rust_linker.py**: Rust toolchain linking utility
-- **scripts**: Personal configuration or script
-- **scripts_env.sh**: Personal configuration or script
-- **shell_scripts**: Collection of shell utilities
-- **strip_comments.py**: Code comment removal tool
-- **templates**: Code and project templates
+- `complex_test.rs`: Comprehensive Rust feature testing script.
+- `governor.rs`: System resource/governor controller.
+- `news.rs`: Rust-based news headline fetcher.
 
+## Building & Usage
+
+### Standalone Utilities
+Scripts like `news.rs` and `governor.rs` can be compiled directly:
+```bash
+rustc rust/utils/news.rs -o news
+./news
+```
+*Note: `governor.rs` requires `termux-api` packages to be installed.*
+
+### Dependency Tests
+`complex_test.rs` is a showcase of external dependencies (Tokio, Serde). To run it, it is recommended to use the `offline-handbook` project or a dedicated Cargo environment.
 ---
-*Generated automatically by Dotfiles Manager*
+*Generated automatically by Developer Hub Doc-Manager*

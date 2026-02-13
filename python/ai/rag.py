@@ -21,11 +21,9 @@ def get_context(query):
                 with open(path, 'r') as f:
                     content = f.read()
                     if any(k in content.lower() for k in keywords):
-                        context.append(f"--- Context from {file} ---
-{content}")
+                        context.append(f"--- Context from {file} ---\n{content}")
     
-    return "
-".join(context)
+    return "\n".join(context)
 
 def main():
     if len(sys.argv) < 2:
@@ -40,12 +38,7 @@ def main():
     query = sys.argv[1]
     context = get_context(query)
     
-    prompt = f"Context:
-{context}
-
-Question: {query}
-
-Answer based on context:"
+    prompt = f"Context:\n{context}\n\nQuestion: {query}\n\nAnswer based on context:"
     
     
     cmd = [

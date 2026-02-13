@@ -1,19 +1,21 @@
 #!/bin/bash
-# Documentation Generation Script
+# Documentation Generation Script (Run from project root)
 
-echo "Generating Documentation..."
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+echo "Generating Documentation in $PROJECT_ROOT..."
 
 # Rust docs
 if command -v cargo &> /dev/null; then
-    cd src/rust/offline-handbook && cargo doc --no-deps --target-dir ../../../docs/rust
-    cd ../../..
+    echo "[*] Generating Rust docs..."
+    cd "$PROJECT_ROOT/rust/offline-handbook" && cargo doc --no-deps --target-dir "$PROJECT_ROOT/docs/rust"
 fi
 
-# Python docs (example using pdoc)
+# Python docs
 if command -v pdoc &> /dev/null; then
-    pdoc src/python -o docs/python
+    echo "[*] Generating Python docs..."
+    pdoc "$PROJECT_ROOT/python" -o "$PROJECT_ROOT/docs/python"
 else
-    echo "pdoc not found, skipping Python docs generation."
+    echo "[!] pdoc not found, skipping Python docs."
 fi
 
 echo "Documentation updated in docs/ folder."

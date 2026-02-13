@@ -85,9 +85,8 @@ class RustSuckless:
         cmd.extend(["-L", f"dependency={self.local_libs}"])
         cmd.extend([main_rs, "-o", os.path.join(self.output_dir, output_name)])
 
-        if verbose: print(f"
-[DEBUG] {' '.join(cmd)}
-")
+        if verbose:
+            print(f"\n[DEBUG] {' '.join(cmd)}\n")
         
         print(f"[*] Compiling Binary: {output_name}...")
         subprocess.run(cmd, check=True)

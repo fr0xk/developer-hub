@@ -27,7 +27,7 @@ pub fn pattern_matching() {
     match state {
         ToolState::Idle => println!("Idle"),
         ToolState::Running(pid) => println!("Running PID: {}", pid),
-        ToolState::Error(e) => eprintln!("Err: {}", e),
+        ToolState::Error(ref e) => eprintln!("Err: {}", e),
     }
 
     // if let syntax

@@ -1,5 +1,5 @@
 use clap::{Parser, Subcommand};
-use starter_kit::*; // Using the lib modules
+use handbook::*; // Using the lib modules
 
 #[derive(Parser)]
 #[command(author, version, about = "Offline Rust Reference Handbook")]

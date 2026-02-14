@@ -1,6 +1,45 @@
+" Minimal light-themed .vimrc for Unixporn
+
+" Enable syntax highlighting
+syntax enable
 set background=light
-colorscheme PaperColor
+
+" Colorscheme
+colorscheme default
+
+" Basic settings
 set number
 set relativenumber
-syntax on
+set cursorline
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set autoindent
+set smartindent
+set wrap
+set linebreak
+set showmatch
+set hlsearch
+set incsearch
 set termguicolors
+
+" Visual settings for light theme
+highlight LineNr ctermfg=darkgray
+highlight CursorLineNR ctermfg=blue
+highlight Search ctermbg=yellow ctermfg=black
+highlight IncSearch ctermbg=green ctermfg=white
+
+" Status line
+set laststatus=2
+set ruler
+
+" Enable mouse support
+set mouse=a
+
+" Backup settings
+set backup
+set backupdir=~/.vim/backups//
+set directory=~/.vim/swaps//
+set undofile
+set undodir=~/.vim/undo//

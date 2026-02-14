@@ -1,0 +1,25 @@
+# ~/.profile - Unixporn Light Theme Environment
+
+# Set default terminal to support colors
+export TERM=xterm-256color
+
+# Set light theme for applications
+export GREP_COLOR='1;33'
+export LESS_TERMCAP_mb=$'\e[1;32m'     # begin blinking
+export LESS_TERMCAP_md=$'\e[1;32m'     # begin bold
+export LESS_TERMCAP_me=$'\e[0m'        # end bold
+export LESS_TERMCAP_so=$'\e[01;33m'    # begin reverse video
+export LESS_TERMCAP_se=$'\e[0m'        # end reverse video
+export LESS_TERMCAP_us=$'\e[1;32m'     # begin underline
+export LESS_TERMCAP_ue=$'\e[0m'        # end underline
+
+# Preferred editors
+export EDITOR=nano
+export VISUAL=nano
+
+# Path
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/go/bin:$PATH"
+
+# Locale settings
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8

@@ -6,8 +6,11 @@ autoload -U colors && colors
 # Light theme colors for zsh
 export LS_COLORS="di=34:fi=00:ln=36:pi=33:so=35:bd=35:cd=35:or=00:mi=00:su=31:sg=32:tw=36:ow=34"
 
-# Prompt configuration to match fish
-PROMPT="%F{yellow}%n%f@%F{green}%m%f:%F{blue}%~%f \$ "
+# Source custom prompt
+if [ -f "$HOME/.config/prompt/custom_prompt.sh" ]; then
+    source "$HOME/.config/prompt/custom_prompt.sh"
+    set_custom_prompt "zsh"
+fi
 
 # History settings
 HISTSIZE=999
@@ -36,7 +39,7 @@ autoload -U compinit; compinit
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh/agent.env
 fi
-if [[ ! -S "$SSH_AUTH_SOCK" ]]; then
+if [[ ! -S "$SSH_AUTH_SOCK" ]; then
     eval $(ssh-agent -s) > /dev/null
     ssh-add ~/.ssh/id_ed25519 2>/dev/null
 fi

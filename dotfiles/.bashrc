@@ -1,9 +1,14 @@
 # ~/.bashrc - Unixporn Light Theme
 
 # Set light theme colors
-export PS1="\[\033[01;33m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \$ "
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
+
+# Source custom prompt
+if [ -f "$HOME/.config/prompt/custom_prompt.sh" ]; then
+    source "$HOME/.config/prompt/custom_prompt.sh"
+    set_custom_prompt "bash"
+fi
 
 # Launch Fish if available
 if command -v fish >/dev/null 2>&1 && [ -z "$BASH_EXECUTION_STRING" ]; then

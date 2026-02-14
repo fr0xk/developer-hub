@@ -26,21 +26,8 @@ set -g fish_history_save_unmodified 500
 
 set -gx PATH "$HOME/.local/bin" "$HOME/.cargo/bin" "$HOME/go/bin" $PATH
 
-# Clean light-themed prompt
-function fish_prompt
-    set_color yellow
-    echo -n (whoami)
-    set_color normal
-    echo -n "@"
-    set_color green
-    echo -n (hostname | cut -d'.' -f1)
-    set_color normal
-    echo -n ":"
-    set_color blue
-    echo -n (pwd | sed "s|$HOME|~|")
-    set_color normal
-    echo -n " \$ "
-end
+# Custom prompt is handled by fish_prompt.fish function file
+# See ~/.config/fish/functions/fish_prompt.fish
 
 # Start agent if not running and add key if not loaded
 if not set -q SSH_AUTH_SOCK

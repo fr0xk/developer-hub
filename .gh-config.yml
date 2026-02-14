@@ -1,0 +1,25 @@
+# GitHub CLI Configuration for developer-hub
+# This file provides repository-specific settings for gh commands
+
+# Default branch
+default_branch: main
+
+# Repository metadata
+name: developer-hub
+owner: fr0xk
+description: "Personal collection of tools, configs, and utilities for Android development with Termux"
+homepage: "https://github.com/fr0xk/developer-hub"
+
+# gh command preferences
+commands:
+  pr:
+    default_base: main
+  issue:
+    default_assignee: fr0xk
+  repo:
+    visibility: public
+
+# Custom aliases for this repository
+aliases:
+  clean: "run 'find . -type d -empty -delete && git add . && git commit -m \"Cleanup empty directories\" --allow-empty'"
+  status: "run 'git status && echo \"\\nGitHub CLI status:\" && gh repo view --web'"

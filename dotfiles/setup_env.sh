@@ -12,18 +12,20 @@ echo "🚀 Starting Robust Environment Setup..."
 REQUIRED_PACKAGES=(
     "zsh"
     "git"
+    "openssh"
+)
+
+# Optional "quality of life" tools - not strictly required for the environment
+OPTIONAL_TOOLS=(
     "eza"
     "bat"
     "starship"
     "zoxide"
     "helix"
     "ripgrep"
-    "openssh"
-    "python"
-    "nodejs"
 )
 
-echo "📦 Checking and installing dependencies..."
+echo "📦 Checking and installing essential dependencies..."
 pkg update -y
 
 for pkg in "${REQUIRED_PACKAGES[@]}"; do
@@ -34,6 +36,8 @@ for pkg in "${REQUIRED_PACKAGES[@]}"; do
         echo "  - $pkg is already installed."
     fi
 done
+
+echo "🔍 Optional tools (install manually if desired: ${OPTIONAL_TOOLS[*]})"
 
 # --- 2. Dotfiles Sync (Symlinking) ---
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

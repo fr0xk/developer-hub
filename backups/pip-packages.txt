@@ -5,6 +5,7 @@ bandit
 bs4
 feedparser
 gguf
+lxml
 mutagen
 nltk
 pandas

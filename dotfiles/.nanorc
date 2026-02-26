@@ -1,0 +1,19 @@
+# GNU nano configuration for light theme
+
+# Set light background
+set background-color white
+set titlebar-color yellow
+set statusbar-bg white
+set statusbar-fg black
+
+# Syntax highlighting
+include "/data/data/com.termux/files/usr/share/nano/*.nanorc"
+
+# General settings
+set autoindent
+set cut
+set historylog
+set morespace
+set smooth
+set tabsize 4
+set softwrap

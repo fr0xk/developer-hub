@@ -2,6 +2,11 @@
 #
 # Philosophy: Depend on standard tools. Extras are optional enhancements.
 
+# --- Go Environment ---
+# Set CGO_ENABLED=0 for static compilation by default
+export CGO_ENABLED=0
+export GOFLAGS="-tags netgo"
+
 # --- History ---
 HISTSIZE=5000
 SAVEHIST=5000
@@ -76,12 +81,9 @@ alias la='ls -A'
 alias grep='grep --color=auto'
 
 # Editor setup - prefer vim, fallback to nano
-if command -v vim >/dev/null; then
-    export EDITOR='vim'
-    export VISUAL='vim'
-    alias vi='vim'
-    alias vim='vim'
-else
+# The default EDITOR/VISUAL are already set above
+if ! command -v vim >/dev/null; then
+    # Only set fallback to nano if vim is not available
     export EDITOR='nano'
     export VISUAL='nano'
     alias vi='nano'

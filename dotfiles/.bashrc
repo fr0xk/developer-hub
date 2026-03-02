@@ -63,9 +63,9 @@ safe_add_to_path "$HOME/.cargo/bin"
 if command -v vim >/dev/null 2>&1; then
     safe_export EDITOR "vim"
     safe_export VISUAL "vim"
-elif command -v nano >/dev/null 2>&1; then
-    safe_export EDITOR "nano"
-    safe_export VISUAL "nano"
+elif command -v vim >/dev/null 2>&1; then
+    safe_export EDITOR "vim"
+    safe_export VISUAL "vim"
 else
     safe_export EDITOR "cat"
     safe_export VISUAL "cat"

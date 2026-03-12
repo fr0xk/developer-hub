@@ -28,6 +28,11 @@ from pathlib import Path
 
 def run_cmd(cmd, check=True, capture=True):
     """Run shell command, return stdout or (stdout, stderr)"""
+    # Check if the base command exists before running
+    base_cmd = cmd.split()[0]
+    if subprocess.run(f"command -v {base_cmd}", shell=True, capture_output=True).returncode != 0:
+        return "", f"Command '{base_cmd}' not found"
+    
     try:
         if capture:
             result = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=30)

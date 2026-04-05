@@ -25,7 +25,6 @@ path_add() {
 
 path_add "$HOME/.local/bin"
 path_add "$HOME/.cargo/bin"
-path_add "$HOME/go/bin"
 
 export PATH
 

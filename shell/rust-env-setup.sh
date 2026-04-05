@@ -29,6 +29,7 @@ CRATES=(
     "serde_json=1"
     "reqwest=0.12,json,blocking"
     "chrono=0.4,serde"
+    "clap=4,derive"
 )
 
 SHELL_RC_FILES=("$HOME/.bashrc" "$HOME/.zshrc")
@@ -194,6 +195,8 @@ build_dependencies_section() {
                 content+="\nchrono = { version = \"${version}\", features = [\"serde\"] }"
             elif [ "$name" = "reqwest" ]; then
                 content+="\nreqwest = { version = \"${version}\", features = [\"json\", \"blocking\"] }"
+            elif [ "$name" = "clap" ]; then
+                content+="\nclap = { version = \"${version}\", features = [\"derive\"] }"
             else
                 content+="\n${name} = { version = \"${version}\", features = [${feature_list}] }"
             fi
@@ -226,9 +229,18 @@ TOML
     # main.rs with usage examples
     cat > "$project_dir/src/main.rs" << 'RS'
 use chrono::Utc;
+use clap::Parser;
 use rand::Rng;
 use regex::Regex;
 use serde::{Deserialize, Serialize};
+
+#[derive(Parser, Debug)]
+#[command(name = "app", about = "A starter Rust project")]
+struct Args {
+    /// Name to greet
+    #[arg(short, long, default_value = "World")]
+    name: String,
+}
 
 #[derive(Serialize, Deserialize, Debug)]
 struct Data {
@@ -238,6 +250,8 @@ struct Data {
 }
 
 fn main() {
+    let args = Args::parse();
+
     // chrono: current timestamp
     let now = Utc::now().to_rfc3339();
 
@@ -248,9 +262,9 @@ fn main() {
     // regex: simple pattern match
     let re = Regex::new(r"hello").unwrap();
     let message = if re.is_match("hello world") {
-        "Regex matched 'hello'!"
+        format!("Hello, {}! Regex matched.", args.name)
     } else {
-        "No match."
+        format!("Hello, {}! No match.", args.name)
     };
 
     let data = Data {

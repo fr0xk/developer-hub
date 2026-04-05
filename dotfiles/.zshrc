@@ -81,5 +81,3 @@ alias cof='cargo fmt'
 alias col='cargo clippy'
 alias cargo-off='export CARGO_NET_OFFLINE=true'
 alias cargo-on='unset CARGO_NET_OFFLINE'
-# Default to offline to save data
-export CARGO_NET_OFFLINE=true

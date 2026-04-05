@@ -47,6 +47,7 @@ The script scaffolds a project with these dependencies:
 - **serde** 1 + **serde_json** 1 — serialization/deserialization
 - **reqwest** 0.12 (json, blocking) — HTTP client
 - **chrono** 0.4 (serde) — date/time handling
+- **clap** 4 (derive) — CLI argument parsing
 
 Edit the `CRATES` array at the top of the script to change them.
 

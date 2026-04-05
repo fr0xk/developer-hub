@@ -70,3 +70,16 @@ case "$OS_TYPE" in
 esac
 
 umask 022
+
+# Rust - offline/metered mode
+alias co='cargo'
+alias cob='cargo build'
+alias cor='cargo run'
+alias cot='cargo test'
+alias coc='cargo check'
+alias cof='cargo fmt'
+alias col='cargo clippy'
+alias cargo-off='export CARGO_NET_OFFLINE=true'
+alias cargo-on='unset CARGO_NET_OFFLINE'
+# Default to offline to save data
+export CARGO_NET_OFFLINE=true

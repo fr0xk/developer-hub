@@ -23,6 +23,7 @@ save_file() {
     cp -r "$1" "$2"
 }
 run_deploy() {
+    echo "deploying..."
     setup_dirs
     find "$DOTFILES_DIR" -maxdepth 1 -name ".*" -type f | while read -r file; do
         deploy_file "$file" "$HOME/$(basename "$file")"
@@ -38,8 +39,10 @@ run_deploy() {
         deploy_file "$DOTFILES_DIR/.termux/termux.properties" "$HOME/.termux/termux.properties"
     fi
     [ -d "$PROJECT_ROOT/scripts" ] && chmod +x "$PROJECT_ROOT/scripts/"* 2>/dev/null || true
+    echo "done"
 }
 run_save() {
+    echo "saving..."
     find "$DOTFILES_DIR" -maxdepth 1 -name ".*" -type f | while read -r file; do
         save_file "$HOME/$(basename "$file")" "$file"
     done
@@ -53,6 +56,7 @@ run_save() {
         save_file "$HOME/.termux/colors.properties" "$DOTFILES_DIR/.termux/colors.properties"
         save_file "$HOME/.termux/termux.properties" "$DOTFILES_DIR/.termux/termux.properties"
     fi
+    echo "done"
 }
 main() {
     [ "${1:-}" == "--save" ] && run_save || run_deploy

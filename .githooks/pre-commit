@@ -4,6 +4,7 @@ CORE_FILES=(".bashrc" ".zshrc" ".vimrc" ".tmux.conf" ".gitconfig")
 for file in "${CORE_FILES[@]}"; do
     if git diff --cached --name-only | grep -q "^${DOTFILES_DIR}/${file}$"; then
         if [ ! -f "${DOTFILES_DIR}/${file}" ] || [ ! -s "${DOTFILES_DIR}/${file}" ]; then
+            echo "err: core file missing or empty"
             exit 1
         fi
     fi

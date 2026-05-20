@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":["DirentKind"],"struct":["DirEntry","DirentBuf","DirentHeader","DirentIter","Invalid"],"trait":["Buffer"]};

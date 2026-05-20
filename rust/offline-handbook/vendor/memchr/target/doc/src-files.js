@@ -1,2 +1,0 @@
-createSrcSidebar('[["memchr",["",[["arch",[["aarch64",[["neon",[],["memchr.rs","mod.rs","packedpair.rs"]]],["memchr.rs","mod.rs"]],["all",[["packedpair",[],["default_rank.rs","mod.rs"]]],["memchr.rs","mod.rs","rabinkarp.rs","shiftor.rs","twoway.rs"]],["generic",[],["memchr.rs","mod.rs","packedpair.rs"]]],["mod.rs"]],["memmem",[],["mod.rs","searcher.rs"]]],["cow.rs","ext.rs","lib.rs","macros.rs","memchr.rs","vector.rs"]]]]');
-//{"start":19,"fragment_lengths":[405]}

@@ -1,9 +1,0 @@
-(function() {
-    var implementors = Object.fromEntries([["anstyle_parse",[["impl UnsafeUnpin for <a class=\"enum\" href=\"anstyle_parse/state/enum.Action.html\" title=\"enum anstyle_parse::state::Action\">Action</a>",1,["anstyle_parse::state::definitions::Action"]],["impl UnsafeUnpin for <a class=\"enum\" href=\"anstyle_parse/state/enum.State.html\" title=\"enum anstyle_parse::state::State\">State</a>",1,["anstyle_parse::state::definitions::State"]],["impl UnsafeUnpin for <a class=\"struct\" href=\"anstyle_parse/struct.AsciiParser.html\" title=\"struct anstyle_parse::AsciiParser\">AsciiParser</a>",1,["anstyle_parse::AsciiParser"]],["impl UnsafeUnpin for <a class=\"struct\" href=\"anstyle_parse/struct.Params.html\" title=\"struct anstyle_parse::Params\">Params</a>",1,["anstyle_parse::params::Params"]],["impl UnsafeUnpin for <a class=\"struct\" href=\"anstyle_parse/struct.Utf8Parser.html\" title=\"struct anstyle_parse::Utf8Parser\">Utf8Parser</a>",1,["anstyle_parse::Utf8Parser"]],["impl&lt;'a&gt; UnsafeUnpin for <a class=\"struct\" href=\"anstyle_parse/struct.ParamsIter.html\" title=\"struct anstyle_parse::ParamsIter\">ParamsIter</a>&lt;'a&gt;",1,["anstyle_parse::params::ParamsIter"]],["impl&lt;C&gt; UnsafeUnpin for <a class=\"struct\" href=\"anstyle_parse/struct.Parser.html\" title=\"struct anstyle_parse::Parser\">Parser</a>&lt;C&gt;<div class=\"where\">where\n    C: UnsafeUnpin,</div>",1,["anstyle_parse::Parser"]]]]]);
-    if (window.register_implementors) {
-        window.register_implementors(implementors);
-    } else {
-        window.pending_implementors = implementors;
-    }
-})()
-//{"start":57,"fragment_lengths":[1383]}

@@ -1,2 +1,0 @@
-createSrcSidebar('[["serde_derive",["",[["de",[],["enum_.rs","enum_adjacently.rs","enum_externally.rs","enum_internally.rs","enum_untagged.rs","identifier.rs","struct_.rs","tuple.rs","unit.rs"]],["internals",[],["ast.rs","attr.rs","case.rs","check.rs","ctxt.rs","mod.rs","name.rs","receiver.rs","respan.rs","symbol.rs"]]],["bound.rs","de.rs","deprecated.rs","dummy.rs","fragment.rs","lib.rs","pretend.rs","ser.rs","this.rs"]]]]');
-//{"start":19,"fragment_lengths":[407]}

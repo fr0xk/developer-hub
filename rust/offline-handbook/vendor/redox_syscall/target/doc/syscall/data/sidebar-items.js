@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":["GlobalSchemes"],"struct":["CtxtStsBuf","Event","GrantDesc","GrantFlags","ITimerSpec","KernelSchemeInfo","Map","OldMap","Packet","ProcSchemeAttrs","PtraceEvent","SetSighandlerData","Stat","StatVfs","TimeSpec"]};

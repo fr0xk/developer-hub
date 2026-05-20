@@ -1,2 +1,0 @@
-createSrcSidebar('[["libc",["",[["new",[["bionic_libc",[["sys",[],["mod.rs","socket.rs"]]],["mod.rs","pthread.rs","unistd.rs"]],["common",[["linux_like",[],["mod.rs","pthread.rs"]],["posix",[],["mod.rs","pthread.rs","unistd.rs"]]],["mod.rs"]]],["mod.rs"]],["unix",[["linux_like",[["android",[["b64",[["aarch64",[],["mod.rs"]]],["mod.rs"]]],["mod.rs"]]],["mod.rs"]]],["mod.rs"]]],["lib.rs","macros.rs","primitives.rs","types.rs"]]]]');
-//{"start":19,"fragment_lengths":[411]}

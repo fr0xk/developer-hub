@@ -1,1 +1,0 @@
-cargo:rustc-link-search=native=/data/data/com.termux/files/home/workspace/developer-hub/rust/offline-handbook/vendor/windows_aarch64_msvc/lib

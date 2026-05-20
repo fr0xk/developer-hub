@@ -1,2 +1,0 @@
-createSrcSidebar('[["serde_json",["",[["io",[],["mod.rs"]],["value",[],["de.rs","from.rs","index.rs","mod.rs","partial_eq.rs","ser.rs"]]],["de.rs","error.rs","iter.rs","lib.rs","macros.rs","map.rs","number.rs","read.rs","ser.rs"]]]]');
-//{"start":19,"fragment_lengths":[212]}

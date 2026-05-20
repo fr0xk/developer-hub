@@ -1,1 +1,0 @@
-rd_("dbooleis_cifOptiongwindows0hclicolorhno_coloritruecolormanstyle_querynclicolor_forceAbenable_ansi_colorsActerm_supports_colorAhterm_supports_ansi_color")

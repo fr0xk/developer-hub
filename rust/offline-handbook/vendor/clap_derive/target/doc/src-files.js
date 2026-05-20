@@ -1,2 +1,0 @@
-createSrcSidebar('[["clap_derive",["",[["derives",[],["args.rs","into_app.rs","mod.rs","parser.rs","subcommand.rs","value_enum.rs"]],["utils",[],["doc_comments.rs","error.rs","mod.rs","spanned.rs","ty.rs"]]],["attr.rs","dummies.rs","item.rs","lib.rs","macros.rs"]]]]');
-//{"start":19,"fragment_lengths":[246]}

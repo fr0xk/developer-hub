@@ -1,9 +1,0 @@
-(function() {
-    var implementors = Object.fromEntries([["scopeguard",[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/fmt/trait.Debug.html\" title=\"trait core::fmt::Debug\">Debug</a> for <a class=\"enum\" href=\"scopeguard/enum.Always.html\" title=\"enum scopeguard::Always\">Always</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/fmt/trait.Debug.html\" title=\"trait core::fmt::Debug\">Debug</a> for <a class=\"enum\" href=\"scopeguard/enum.OnSuccess.html\" title=\"enum scopeguard::OnSuccess\">OnSuccess</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/fmt/trait.Debug.html\" title=\"trait core::fmt::Debug\">Debug</a> for <a class=\"enum\" href=\"scopeguard/enum.OnUnwind.html\" title=\"enum scopeguard::OnUnwind\">OnUnwind</a>"],["impl&lt;T, F, S&gt; <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/fmt/trait.Debug.html\" title=\"trait core::fmt::Debug\">Debug</a> for <a class=\"struct\" href=\"scopeguard/struct.ScopeGuard.html\" title=\"struct scopeguard::ScopeGuard\">ScopeGuard</a>&lt;T, F, S&gt;<div class=\"where\">where\n    T: <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/fmt/trait.Debug.html\" title=\"trait core::fmt::Debug\">Debug</a>,\n    F: <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/ops/function/trait.FnOnce.html\" title=\"trait core::ops::function::FnOnce\">FnOnce</a>(T),\n    S: <a class=\"trait\" href=\"scopeguard/trait.Strategy.html\" title=\"trait scopeguard::Strategy\">Strategy</a>,</div>"]]]]);
-    if (window.register_implementors) {
-        window.register_implementors(implementors);
-    } else {
-        window.pending_implementors = implementors;
-    }
-})()
-//{"start":57,"fragment_lengths":[1504]}

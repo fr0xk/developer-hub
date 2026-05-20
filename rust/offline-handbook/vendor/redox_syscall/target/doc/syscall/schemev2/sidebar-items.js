@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":["CqeOpcode","Opcode"],"struct":["Cqe","NewFdFlags","Sqe","SqeFlags"]};

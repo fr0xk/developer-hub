@@ -1,1 +1,0 @@
-rd_("kparking_lot")

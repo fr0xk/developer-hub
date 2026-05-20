@@ -1,1 +1,0 @@
-rd_("Adsignal_hook_registry")

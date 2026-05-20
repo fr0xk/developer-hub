@@ -1,1 +1,0 @@
-rd_("BdReport whether this is running in CIAnWindows-specific style queriesAeCheck CLICOLOR statusAeCheck NO_COLOR statusBeCheck COLORTERM for truecolor supportBeLow level terminal capability lookupsAkCheck CLICOLOR_FORCE statusAmEnable ANSI escape codes (\xe2\x80\xa6BiCheck <code>TERM</code> for color supportBnCheck <code>TERM</code> for ANSI color support")

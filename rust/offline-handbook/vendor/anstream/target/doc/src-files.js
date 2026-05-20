@@ -1,2 +1,0 @@
-createSrcSidebar('[["anstream",["",[["adapter",[],["mod.rs","strip.rs","wincon.rs"]]],["_macros.rs","auto.rs","buffer.rs","fmt.rs","lib.rs","stream.rs","strip.rs"]]]]');
-//{"start":19,"fragment_lengths":[146]}

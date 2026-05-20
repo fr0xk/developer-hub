@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"constant":["KERNEL_METADATA_SIZE","PAGE_SIZE"],"fn":["syscall0","syscall1","syscall2","syscall3","syscall4","syscall5"],"macro":["ptrace_event"],"mod":["call","data","dirent","error","flag","io","number","scheme","schemev2","sigabi"],"struct":["EnvRegisters","Exception","FloatRegisters","IntRegisters"]};

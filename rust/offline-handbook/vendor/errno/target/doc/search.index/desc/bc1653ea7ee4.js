@@ -1,1 +1,0 @@
-rd_("AoReturns the argument unchanged.BaCalls <code>U::from(self)</code>.BeWraps a platform-specific error code.ClCross-platform interface to the <code>errno</code> variable.CjReturns the platform-specific value of <code>errno</code>.CgSets the platform-specific value of <code>errno</code>.")

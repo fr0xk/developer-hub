@@ -1,1 +1,0 @@
-rd_("BgDefines an external function to import.AgImport libs for Windows")

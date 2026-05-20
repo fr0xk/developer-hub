@@ -1,9 +1,0 @@
-(function() {
-    var implementors = Object.fromEntries([["anstream",[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/clone/trait.Clone.html\" title=\"trait core::clone::Clone\">Clone</a> for <a class=\"struct\" href=\"anstream/adapter/struct.StripBytes.html\" title=\"struct anstream::adapter::StripBytes\">StripBytes</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/clone/trait.Clone.html\" title=\"trait core::clone::Clone\">Clone</a> for <a class=\"struct\" href=\"anstream/adapter/struct.StripStr.html\" title=\"struct anstream::adapter::StripStr\">StripStr</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/clone/trait.Clone.html\" title=\"trait core::clone::Clone\">Clone</a> for <a class=\"struct\" href=\"anstream/adapter/struct.WinconBytes.html\" title=\"struct anstream::adapter::WinconBytes\">WinconBytes</a>"],["impl&lt;'s&gt; <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/clone/trait.Clone.html\" title=\"trait core::clone::Clone\">Clone</a> for <a class=\"struct\" href=\"anstream/adapter/struct.StrippedBytes.html\" title=\"struct anstream::adapter::StrippedBytes\">StrippedBytes</a>&lt;'s&gt;"],["impl&lt;'s&gt; <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.0/core/clone/trait.Clone.html\" title=\"trait core::clone::Clone\">Clone</a> for <a class=\"struct\" href=\"anstream/adapter/struct.StrippedStr.html\" title=\"struct anstream::adapter::StrippedStr\">StrippedStr</a>&lt;'s&gt;"]]]]);
-    if (window.register_implementors) {
-        window.register_implementors(implementors);
-    } else {
-        window.pending_implementors = implementors;
-    }
-})()
-//{"start":57,"fragment_lengths":[1453]}

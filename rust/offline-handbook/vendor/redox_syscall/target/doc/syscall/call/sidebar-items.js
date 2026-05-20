@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":["call_ro","call_rw","call_wo","clock_gettime","close","dup","dup2","fchmod","fchown","fcntl","flink","fmap","fpath","frename","fstat","fstatvfs","fsync","ftruncate","funmap","futex","futimens","lseek","mkns","mprotect","nanosleep","open","openat","read","rmdir","sched_yield","sendfd","unlink","write"]};

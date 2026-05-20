@@ -1,1 +1,0 @@
-rd_("nanstyle_wincon")

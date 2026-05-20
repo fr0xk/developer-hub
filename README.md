@@ -1,23 +1,38 @@
-Developer Hub
-Personal tools and configs for Android development with Termux.
-Includes package backup system and light-themed dotfiles.
-Everything is version-controlled and reproducible.
+# Developer Hub
 
-## GitHub CLI Integration
+A minimalist, suckless toolkit and environment configuration for developers, optimized for Termux and Linux.
 
-This repository is optimized for `gh` (GitHub CLI):
+## 📂 Project Structure
 
-- ✅ **Authenticated**: `gh auth status` shows active login
-- ✅ **SSH configured**: Git operations use SSH protocol
-- ✅ **Pre-commit hook**: Automatically cleans empty directories
-- ✅ **Custom aliases**: Use `gh repo view`, `gh pr create`, etc.
+- `dotfiles/`: Core configuration files (bash, zsh, vim, tmux, etc.).
+- `scripts/`: Collection of automation tools (Python, Go, Shell).
+- `templates/`: Project templates and utility modules (Rust, etc.).
+- `backups/`: System package lists and configuration backups.
+- `projects/`: larger standalone projects.
+- `setup.sh`: The main, robust entry point for syncing the environment.
 
-### Quick gh commands:
+## 🚀 Getting Started
+
+To sync your environment with this hub:
+
 ```bash
-gh repo view          # Open repo in browser
-gh pr create          # Create pull requests
-gh issue create       # Create issues
-gh run list           # View CI runs
+./setup.sh
 ```
 
-The `.gh-config.yml` file provides repository-specific settings.
+The setup script is designed to be "self-healing" and safe. It will create backups of any existing files it replaces in `~/.dotfiles_backup_<timestamp>`.
+
+## 🛠️ Usage
+
+### Scripts
+All tools in `scripts/` are automatically made executable by `setup.sh`. You can run them directly or add `scripts/` to your PATH.
+
+### Templates
+Use the files in `templates/` as a starting point for new projects.
+
+## 🛡️ Robustness
+- **Non-destructive**: Always creates backups before replacing files.
+- **Environment Aware**: Automatically detects if you are in Termux or a standard Linux environment.
+- **Symlink Based**: Uses symlinks so local changes to the repo are reflected immediately in your home directory.
+
+---
+*Stay efficient. Stay minimal.*

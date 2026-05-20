@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":["OpenResult"],"fn":["calc_seek_offset_isize","calc_seek_offset_usize"],"struct":["CallerCtx"],"trait":["Scheme","SchemeBlock","SchemeBlockMut","SchemeMut"]};

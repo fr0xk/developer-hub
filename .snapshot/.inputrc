@@ -1,0 +1,22 @@
+# ~/.inputrc - Light theme readline configuration
+
+# Show all matches when there are multiple possibilities
+set show-all-if-ambiguous on
+
+# Show completion at first TAB press
+set show-all-if-unmodified on
+
+# Case-insensitive tab completion
+set completion-ignore-case on
+
+# Colored completion (the colors are numbers for ANSI escape sequences)
+set colored-stats on
+
+# Highlight the matched text
+set menu-complete-display-prefix on
+
+# Enable history expansion with space
+space: magic-space
+
+# Use ^W for backward-kill-word like in bash
+"\C-w": backward-kill-word

@@ -1,0 +1,5 @@
+[user]
+	name = Sudarshan Kakoty
+	email = nikolaibitinit@gmail.com
+[core]
+	excludesfile = /data/data/com.termux/files/home/.gitignore_global

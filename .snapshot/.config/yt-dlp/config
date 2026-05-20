@@ -1,0 +1,4 @@
+-o "%(title)s.%(ext)s"
+--restrict-filenames
+--trim-filename 255
+--no-check-certificate

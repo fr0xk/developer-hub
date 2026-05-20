@@ -6,9 +6,11 @@ set -euo pipefail
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOTFILES_DIR="$PROJECT_ROOT/dotfiles"
+SNAPSHOT_DIR="$PROJECT_ROOT/.snapshot"
 BACKUP_BASE="$HOME/.dotfiles_backup_$(date +%s)"
 
 log() { echo -e "[\033[0;34mINFO\033[0m] $1"; }
+warn() { echo -e "[\033[0;33mWARN\033[0m] $1"; }
 error() { echo -e "[\033[0;31mERROR\033[0m] $1"; exit 1; }
 
 # Safety check
@@ -21,6 +23,22 @@ ENVIRONMENT="linux"
 if [ -d "/data/data/com.termux" ]; then
     ENVIRONMENT="termux"
 fi
+
+create_snapshot() {
+    log "Creating internal project snapshot..."
+    mkdir -p "$SNAPSHOT_DIR"
+    cp -r "$DOTFILES_DIR/." "$SNAPSHOT_DIR/"
+}
+
+restore_repo() {
+    if [ ! -d "$SNAPSHOT_DIR" ]; then
+        error "No snapshot found to restore from."
+    fi
+    log "Restoring repository files from last known good snapshot..."
+    cp -r "$SNAPSHOT_DIR/." "$DOTFILES_DIR/"
+    log "\033[0;32mRepository restored successfully.\033[0m"
+    exit 0
+}
 
 setup_dirs() {
     log "Preparing directories..."
@@ -35,8 +53,9 @@ sync_file() {
     local dst="$2"
     local name="$3"
 
-    if [ ! -e "$src" ]; then
-        log "Skipping $name: Source not found"
+    # Integrity Check: Don't link if the source is missing or empty
+    if [ ! -f "$src" ] && [ ! -d "$src" ]; then
+        warn "Source file missing: $name. Skipping sync to prevent breaking local setup."
         return
     fi
 
@@ -61,7 +80,6 @@ sync_dotfiles() {
     log "Syncing dotfiles..."
     
     # Core dotfiles in the dotfiles/ directory
-    # Find all files starting with '.' in the dotfiles directory
     find "$DOTFILES_DIR" -maxdepth 1 -name ".*" -type f | while read -r file; do
         filename=$(basename "$file")
         sync_file "$file" "$HOME/$filename" "$filename"
@@ -69,7 +87,6 @@ sync_dotfiles() {
 
     # Specialized directories
     if [ -d "$DOTFILES_DIR/.config" ]; then
-        # Sync subdirectories of .config individually to avoid obliterating the whole dir
         find "$DOTFILES_DIR/.config" -maxdepth 1 -mindepth 1 | while read -r conf; do
             confname=$(basename "$conf")
             sync_file "$conf" "$HOME/.config/$confname" ".config/$confname"
@@ -99,7 +116,15 @@ finalize() {
 }
 
 main() {
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            --restore-repo) restore_repo ;;
+            *) break ;;
+        esac
+    done
+
     echo "--- Developer Hub Setup ---"
+    create_snapshot
     setup_dirs
     sync_dotfiles
     finalize

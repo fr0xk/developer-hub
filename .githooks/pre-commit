@@ -1,0 +1,29 @@
+#!/bin/bash
+# .githooks/pre-commit - Protect against pushing broken/deleted dotfiles
+
+DOTFILES_DIR="dotfiles"
+CORE_FILES=(".bashrc" ".zshrc" ".vimrc" ".tmux.conf" ".gitconfig")
+
+echo "--- Running Integrity Check ---"
+
+# 1. Check if any core files are missing from the index (staged for deletion)
+for file in "${CORE_FILES[@]}"; do
+    if git diff --cached --name-only | grep -q "^${DOTFILES_DIR}/${file}$"; then
+        # Check if it was deleted
+        if [ ! -f "${DOTFILES_DIR}/${file}" ]; then
+            echo -e "[\e[31mERROR\e[0m] You are trying to commit a DELETION of a core file: ${file}"
+            echo "Stopping commit to prevent breaking your remote repo."
+            exit 1
+        fi
+        
+        # Check if it's empty (0 bytes)
+        if [ ! -s "${DOTFILES_DIR}/${file}" ]; then
+            echo -e "[\e[31mERROR\e[0m] Core file is EMPTY: ${file}"
+            echo "Stopping commit to prevent pushing an empty config."
+            exit 1
+        fi
+    fi
+done
+
+echo "✓ Integrity check passed."
+exit 0

@@ -9,17 +9,27 @@ A minimalist, suckless toolkit and environment configuration for developers, opt
 - `templates/`: Project templates and utility modules (Rust, etc.).
 - `backups/`: System package lists and configuration backups.
 - `projects/`: larger standalone projects.
-- `setup.sh`: The main, robust entry point for syncing the environment.
+- `setup.sh`: The main, robust entry point for deploying or saving configurations.
 
 ## 🚀 Getting Started
 
-To sync your environment with this hub:
+To deploy your configurations from this hub to your home directory:
 
 ```bash
 ./setup.sh
 ```
 
 The setup script is designed to be "self-healing" and safe. It will create backups of any existing files it replaces in `~/.dotfiles_backup_<timestamp>`.
+
+## 🔄 Syncing Local Changes
+
+If you make changes to your dotfiles in your home directory and want to save them back to this repository, run:
+
+```bash
+./setup.sh --save
+```
+
+This ensures your home directory and repository remain independent, so a mistake in one won't immediately break the other.
 
 ## 🛠️ Usage
 
@@ -32,7 +42,7 @@ Use the files in `templates/` as a starting point for new projects.
 ## 🛡️ Robustness
 - **Non-destructive**: Always creates backups before replacing files.
 - **Environment Aware**: Automatically detects if you are in Termux or a standard Linux environment.
-- **Symlink Based**: Uses symlinks so local changes to the repo are reflected immediately in your home directory.
+- **Independence**: Uses standard copies (`cp`) instead of symlinks, so your repository and home directory are safely decoupled.
 
 ---
 *Stay efficient. Stay minimal.*

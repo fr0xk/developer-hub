@@ -4,6 +4,11 @@
 " --- Basic Settings ---
 set nocompatible
 set number
+syntax on
+set background=dark
+set termguicolors
+set t_Co=256
+
 set mouse=a
 set showcmd
 set showmode

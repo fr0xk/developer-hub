@@ -4,20 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ig modern</title>
-    <link rel="stylesheet" 
-          href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700">
     <style>
-        /* master control board */
         :root {
-            /* 1 / 1 is square */
             --ratio-square: 1 / 1;
             --ratio-tall: 3 / 4;
             --active-ratio: var(--ratio-square);
-            
             --bg-shade: #e5e5e5;
             --card-pure: #ffffff;
-            
-            /* the specific colors u ask for */
             --text-teal: #008080;
             --quote-black: #111111;
         }
@@ -29,49 +23,38 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            padding: 2rem; 
+            padding: 2rem;
             box-sizing: border-box;
         }
 
         .scale-wrapper {
             width: 100%;
             max-width: 500px;
-            container-type: inline-size; 
+            container-type: inline-size;
         }
 
         .book-container {
             aspect-ratio: var(--active-ratio);
             background: var(--card-pure);
             border-radius: 16px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15); 
-            /* i shrink the bottom space so text fits perfectly */
-            padding: 6cqw; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            padding: 7cqw;
             box-sizing: border-box;
-            /* local fonts go here if google servers die */
             font-family: 'Caveat', 'Comic Sans MS', cursive;
             color: var(--text-teal);
             line-height: 1.3;
-            /* i shrink text size so the box never trims it */
-            font-size: 4.5cqw; 
+            font-size: 4.5cqw;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
         }
 
         .date-header {
             margin-bottom: 2cqw;
-            font-size: 4cqw;
+            font-size: 3cqw;
             opacity: 0.8;
             color: var(--text-teal);
-        }
-
-        .block-quote {
-            margin: 3cqw auto;
-            text-align: center;
-            max-width: 95%;
-            font-weight: 700;
-            color: var(--quote-black);
         }
 
         .main-text {
@@ -81,6 +64,34 @@
             font-weight: 400;
             color: var(--text-teal);
         }
+
+        .block-quote {
+            margin: 3cqw auto;
+            max-width: 95%;
+            font-weight: 700;
+            color: var(--quote-black);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .block-quote p {
+            margin: 0;
+            text-align: center;
+            width: 100%;
+            font-size: 4cqw;
+        }
+
+        .block-quote cite {
+            display: block;
+            text-align: right;
+            align-self: flex-end;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 3.8cqw;
+            opacity: 0.8;
+            margin-top: 1cqw;
+        }
     </style>
 </head>
 <body>
@@ -89,33 +100,38 @@
         <div class="book-container">
             <div class="date-header" id="auto-date"></div>
 
-            <div class="block-quote">
-                "insert your edgy quote here to trap readers"
+            <div class="main-text">
+                write your first block of text here
+                write about how life is a total scam
+                or how your brain feels like hot soup
+                keep the sentences short so people
+                who do not read books can still
+                double tap it on their mobile screens
             </div>
 
             <div class="main-text">
-                write your first block of text here write about how life 
-                is a total scam or how your brain feels like hot soup 
-                keep the sentences short so people who do not read books 
-                can still double tap it on their mobile screens
+                type the conclusion text here
+                make it sound deeply cynical
+                so people save the post and share
+                it to their stories for free clout
+                the bottom area stays empty
+                for that premium look
             </div>
 
             <div class="block-quote">
-                "another hook line goes here for visual break"
-            </div>
-
-            <div class="main-text">
-                type the conclusion text here make it sound deeply 
-                cynical so people save the post and share it to their 
-                stories for free clout the bottom area 
-                stays empty for that premium look
+		    <!--<p>"hook line goes here for visual break"</p>-->
+                <cite>— author name</cite>
             </div>
         </div>
     </div>
 
     <script>
         const d = new Date();
-        const ops = { month: 'long', day: 'numeric', year: 'numeric' };
+        const ops = {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric'
+        };
         let str = d.toLocaleDateString('en-US', ops).toLowerCase();
         document.getElementById('auto-date').innerText = str;
     </script>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ig modern</title>
+    <link rel="stylesheet" 
+          href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700">
+    <style>
+        /* master control board */
+        :root {
+            /* 1 / 1 is square */
+            --ratio-square: 1 / 1;
+            --ratio-tall: 3 / 4;
+            --active-ratio: var(--ratio-square);
+            
+            --bg-shade: #e5e5e5;
+            --card-pure: #ffffff;
+            
+            /* the specific colors u ask for */
+            --text-teal: #008080;
+            --quote-black: #111111;
+        }
+
+        body {
+            background: var(--bg-shade);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 2rem; 
+            box-sizing: border-box;
+        }
+
+        .scale-wrapper {
+            width: 100%;
+            max-width: 500px;
+            container-type: inline-size; 
+        }
+
+        .book-container {
+            aspect-ratio: var(--active-ratio);
+            background: var(--card-pure);
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15); 
+            /* i shrink the bottom space so text fits perfectly */
+            padding: 6cqw; 
+            box-sizing: border-box;
+            /* local fonts go here if google servers die */
+            font-family: 'Caveat', 'Comic Sans MS', cursive;
+            color: var(--text-teal);
+            line-height: 1.3;
+            /* i shrink text size so the box never trims it */
+            font-size: 4.5cqw; 
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .date-header {
+            margin-bottom: 2cqw;
+            font-size: 4cqw;
+            opacity: 0.8;
+            color: var(--text-teal);
+        }
+
+        .block-quote {
+            margin: 3cqw auto;
+            text-align: center;
+            max-width: 95%;
+            font-weight: 700;
+            color: var(--quote-black);
+        }
+
+        .main-text {
+            text-align: justify;
+            text-indent: 4cqw;
+            margin: 0 0 2cqw 0;
+            font-weight: 400;
+            color: var(--text-teal);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scale-wrapper">
+        <div class="book-container">
+            <div class="date-header" id="auto-date"></div>
+
+            <div class="block-quote">
+                "insert your edgy quote here to trap readers"
+            </div>
+
+            <div class="main-text">
+                write your first block of text here write about how life 
+                is a total scam or how your brain feels like hot soup 
+                keep the sentences short so people who do not read books 
+                can still double tap it on their mobile screens
+            </div>
+
+            <div class="block-quote">
+                "another hook line goes here for visual break"
+            </div>
+
+            <div class="main-text">
+                type the conclusion text here make it sound deeply 
+                cynical so people save the post and share it to their 
+                stories for free clout the bottom area 
+                stays empty for that premium look
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const d = new Date();
+        const ops = { month: 'long', day: 'numeric', year: 'numeric' };
+        let str = d.toLocaleDateString('en-US', ops).toLowerCase();
+        document.getElementById('auto-date').innerText = str;
+    </script>
+
+</body>
+</html>
